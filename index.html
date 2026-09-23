@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <title>个人介绍|杭州具身智能体教育科技有限公司</title>
+  <style>
+    :root { --ink:#eaf5ff; --muted:#91a8bd; --blue:#4cc9ff; --violet:#8272ff; --line:rgba(159,211,255,.16); --panel:rgba(10,27,47,.66); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:#07111f; font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.4; background-image:linear-gradient(rgba(94,169,224,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(94,169,224,.05) 1px,transparent 1px); background-size:52px 52px; mask-image:linear-gradient(#000,transparent 82%); }
+    .shell { width:min(1180px,calc(100% - 44px)); margin:auto; position:relative; }
+    .hero { min-height:720px; position:relative; overflow:hidden; isolation:isolate; background:radial-gradient(circle at 75% 38%,#153e6d 0,rgba(21,62,109,.38) 20%,transparent 52%),radial-gradient(circle at 18% 10%,rgba(73,120,255,.24),transparent 38%),linear-gradient(145deg,#07111f 12%,#091b30 66%,#07111f); }
+    .hero::after { content:""; position:absolute; width:680px; height:680px; border:1px solid rgba(82,199,255,.18); border-radius:50%; right:-170px; top:70px; box-shadow:0 0 0 68px rgba(82,199,255,.035),0 0 0 136px rgba(82,199,255,.02); z-index:-1; }
+    nav { height:86px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(155,210,255,.12); }
+    .brand { font-size:14px; font-weight:700; letter-spacing:2px; } .brand b { color:var(--blue); margin-right:8px; }
+    nav a { color:#adc2d5; text-decoration:none; font-size:13px; margin-left:24px; transition:.2s; } nav a:hover { color:var(--blue); }
+    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; align-items:center; min-height:634px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--blue); font-size:13px; letter-spacing:1.6px; font-weight:700; }
+    .eyebrow i { width:32px; height:1px; background:var(--blue); display:inline-block; box-shadow:0 0 10px var(--blue); }
+    .nameplate { margin-top:17px; color:#dff4ff; font-size:18px; font-weight:700; letter-spacing:1px; }
+    .nameplate span { color:#7bb9d9; font-size:13px; font-weight:500; margin-left:8px; letter-spacing:.5px; }
+    h1 { margin:12px 0 18px; font-size:clamp(38px,5.1vw,70px); line-height:1.14; letter-spacing:-2px; } h1 em { font-style:normal; color:#78d8ff; }
+    .intro { max-width:600px; color:#acc0d1; font-size:16px; line-height:1.9; margin:0 0 32px; }
+    .metrics { display:flex; gap:34px; } .metric { border-left:1px solid var(--blue); padding-left:13px; } .metric strong { display:block; color:#fff; font-size:30px; line-height:1; } .metric span { color:#89a5ba; font-size:12px; letter-spacing:.5px; }
+    .portrait-wrap { height:580px; align-self:end; position:relative; display:flex; justify-content:center; }
+    .portrait-wrap::before { content:""; position:absolute; width:405px; height:405px; border-radius:50%; bottom:52px; background:radial-gradient(circle,#276a98 0,rgba(35,93,140,.2) 46%,transparent 69%); filter:blur(6px); }
+    .portrait { height:100%; max-width:100%; object-fit:contain; object-position:center bottom; position:relative; z-index:1; filter:drop-shadow(0 24px 26px rgba(0,0,0,.42)); mix-blend-mode:lighten; }
+    .chip { position:absolute; z-index:2; padding:10px 13px; border:1px solid rgba(117,216,255,.35); background:rgba(10,34,58,.66); backdrop-filter:blur(8px); color:#bbecff; font-size:11px; letter-spacing:.8px; } .chip.one { top:120px; right:0; } .chip.two { bottom:116px; left:5px; }
+    main { padding:94px 0 76px; } .section-label { color:var(--blue); font-size:12px; letter-spacing:2px; font-weight:700; } h2 { font-size:clamp(28px,3vw,42px); margin:10px 0 38px; letter-spacing:-1px; }
+    .experience { display:grid; grid-template-columns: .72fr 1.28fr; gap:55px; padding-bottom:88px; border-bottom:1px solid var(--line); } .statement { color:#a9bece; line-height:1.85; font-size:15px; margin:0; }
+    .timeline { border-left:1px solid var(--line); padding-left:28px; display:grid; gap:27px; } .timeline div { position:relative; } .timeline div::before { content:""; position:absolute; width:8px; height:8px; border-radius:50%; background:var(--blue); box-shadow:0 0 12px var(--blue); left:-33px; top:7px; } .timeline small { color:#73cfff; font-weight:700; letter-spacing:1px; } .timeline h3 { margin:5px 0 4px; font-size:17px; } .timeline p { margin:0; color:#8fa9bc; font-size:14px; line-height:1.7; }
+    .skills { padding:92px 0 28px; } .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; } .card { min-height:300px; padding:29px; border:1px solid var(--line); background:linear-gradient(135deg,rgba(24,58,88,.64),rgba(9,25,43,.72)); position:relative; overflow:hidden; transition:transform .25s,border-color .25s; } .card:hover { transform:translateY(-6px); border-color:rgba(89,204,255,.62); } .card::after { content:""; width:160px; height:160px; position:absolute; right:-65px; bottom:-80px; border:1px solid rgba(79,199,255,.18); border-radius:50%; } .no { color:var(--blue); font:700 14px/1 ui-monospace,monospace; } .card h3 { font-size:22px; margin:25px 0 12px; } .card p { color:#9db4c5; font-size:14px; line-height:1.8; margin:0; } .tags { margin-top:23px; display:flex; flex-wrap:wrap; gap:7px; } .tags span { border:1px solid rgba(147,206,245,.19); color:#b2d5e9; padding:5px 8px; font-size:11px; }
+    .projects { padding:68px 0 80px; } .project-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; } .project { padding:27px 29px; border-top:1px solid #4ed3ff; background:var(--panel); } .project small { color:#7fcfff; letter-spacing:1px; } .project h3 { margin:12px 0 8px; font-size:21px; } .project p { color:#91a9bb; font-size:14px; margin:0; line-height:1.75; }
+    footer { border-top:1px solid var(--line); padding:25px 0 35px; color:#7890a3; font-size:12px; display:flex; justify-content:space-between; } .status { color:#7ce0ad; } .status::before { content:""; display:inline-block; width:6px; height:6px; background:#7ce0ad; border-radius:50%; margin-right:7px; box-shadow:0 0 8px #7ce0ad; }
+    @media (max-width:760px) { .shell { width:min(100% - 32px,620px); } nav { height:72px; } nav div:last-child { display:none; } .hero { min-height:auto; } .hero-grid { display:block; padding-top:72px; min-height:0; } .intro { font-size:14px; } .portrait-wrap { height:400px; margin-top:6px; } .chip { display:none; } .metrics { gap:18px; } .metric strong { font-size:25px; } main { padding-top:65px; } .experience { grid-template-columns:1fr; gap:34px; padding-bottom:60px; } .cards,.project-grid { grid-template-columns:1fr; } .skills { padding-top:62px; } footer { display:block; line-height:2; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell">
+      <nav><div class="brand"><b>◎</b>TECH EDUCATOR</div><div><a href="#about">关于我</a><a href="#skills">技术专长</a><a href="#projects">项目经历</a></div></nav>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><i></i> AI APPLICATION · TECH EDUCATION</div>
+          <div class="nameplate">王国曜 <span>（王哥）</span></div>
+          <h1>让技术真正<br/><em>落地与生长</em></h1>
+          <p class="intro">18 年技术沉淀，10+ 年 IT 教育经验。专注大模型应用与 AI Agent 实战教学，用真实业务案例，带领学习者穿越概念、掌握实践。</p>
+          <div class="metrics"><div class="metric"><strong>18<span>年</span></strong><span>技术工作经验</span></div><div class="metric"><strong>10<span>+</span></strong><span>年 IT 教育实践</span></div><div class="metric"><strong>AI</strong><span>应用实战教学</span></div></div>
+        </div>
+        <div class="portrait-wrap"><span class="chip one">AI AGENT · RAG · OLLAMA</span><span class="chip two">BUILD · TEACH · DELIVER</span><img class="portrait" src="assets/portrait-full.png" alt="个人职业照" /></div>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section id="about" class="experience">
+      <div><div class="section-label">PROFILE / 01</div><h2>从工程现场，<br/>走向技术课堂。</h2><p class="statement">相信最好的技术教育，始终发生在真实问题与可运行的代码之间。既能为零基础学习者搭建清晰路径，也能带领技术人员深入项目实践。</p></div>
+      <div class="timeline"><div><small>18 YEARS OF PRACTICE</small><h3>资深技术从业者</h3><p>具备扎实的工程研发与系统建设经验，参与过移动积分商城开发。</p></div><div><small>10+ YEARS OF EDUCATION</small><h3>IT 教育与实战讲师</h3><p>曾任职于中国移动研究院、某 IT 培训机构高级讲师，始终聚焦可迁移的实战能力。</p></div><div><small>PROJECT LEADERSHIP</small><h3>复杂业务系统交付</h3><p>主导开发某大学《校园一卡通管理平台》，打通实际业务与技术方案。</p></div></div>
+    </section>
+    <section id="skills" class="skills"><div class="section-label">EXPERTISE / 02</div><h2>技术深度，服务于实战成果。</h2><div class="cards">
+      <article class="card"><div class="no">01 / AI</div><h3>大模型与 AI Agent</h3><p>聚焦从原理理解到业务落地的完整链路，拒绝空谈概念。</p><div class="tags"><span>Prompt 工程</span><span>RAG 知识库</span><span>Ollama 部署</span><span>智能体框架</span><span>AI 辅助开发</span></div></article>
+      <article class="card"><div class="no">02 / JAVA</div><h3>后端研发与微服务</h3><p>以企业级工程实践为底座，构建可靠、可演进的服务架构。</p><div class="tags"><span>Spring Boot</span><span>Spring Cloud</span><span>Nacos / Gateway</span><span>Redis / MySQL</span><span>Docker / K8s</span></div></article>
+      <article class="card"><div class="no">03 / DATA</div><h3>大数据与数据工程</h3><p>覆盖离线数仓、实时处理与 ETL 开发，理解数据与 AI 融合的实际场景。</p><div class="tags"><span>Hadoop / Hive</span><span>Spark / Flume</span><span>Linux 运维</span><span>Python 分析</span><span>OpenClaw</span></div></article>
+    </div></section>
+    <section id="projects" class="projects"><div class="section-label">SELECTED WORK / 03</div><h2>项目，是最有说服力的语言。</h2><div class="project-grid"><article class="project"><small>PRODUCT DEVELOPMENT</small><h3>移动积分商城</h3><p>参与核心业务系统开发，在复杂业务协作中积累工程实践与产品交付经验。</p></article><article class="project"><small>PROJECT LEADERSHIP</small><h3>校园一卡通管理平台</h3><p>主导某大学校园一卡通管理平台研发，以系统化方案支撑校园管理业务。</p></article></div></section>
+  </main>
+  <footer class="shell"><span>© 2026 · PERSONAL PROFILE</span><span class="status">OPEN TO TECH EDUCATION &amp; AI PRACTICE</span></footer>
+</body>
+</html>
